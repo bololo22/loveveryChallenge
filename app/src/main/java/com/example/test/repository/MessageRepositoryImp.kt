@@ -1,6 +1,6 @@
 package com.example.test.repository
 
-import com.example.test.repository.model.toSendMessageResponse
+import com.example.test.repository.model.toSendMessageRequest
 import com.example.test.repository.model.toUIMessage
 import com.example.test.repository.model.toUIMessageByUser
 import com.example.test.repository.remote.ApiService
@@ -21,7 +21,7 @@ class MessageRepositoryImp @Inject constructor(private val apiService: ApiServic
     }
 
     override suspend fun sendMessage(messageToSend: MessageToSend): Boolean {
-        val response = apiService.sendMessage(messageToSend.toSendMessageResponse())
+        val response = apiService.sendMessage(messageToSend.toSendMessageRequest())
         return response.isSuccessful
     }
 

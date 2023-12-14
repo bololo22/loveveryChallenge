@@ -48,7 +48,7 @@ fun ApiResponse?.toUIMessageByUser(): List<UIMessage> {
     return uiMessages
 }
 
-fun MessageToSend.toSendMessageResponse(): SendMessageRequest {
+fun MessageToSend.toSendMessageRequest(): SendMessageRequest {
     return SendMessageRequest(
         user = this.user,
         operation = RepositoryConstants.ADD_MESSAGE_OPERATION,
